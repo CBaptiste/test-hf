@@ -8,7 +8,7 @@
 
   $: normalizedRadius = radius + strokeWidth * 2;
   $: circumference = normalizedRadius * 2 * Math.PI;
-  $: isSmallLayout = radius < 30;
+  $: isSmallLayout = radius < 25;
   $: activeRadialTooltip = undefined;
   $: tooltipX = 0;
   $: tooltipY = 0;
@@ -94,9 +94,9 @@
         class="absolute text-center font-light {isSmallLayout ? 'top-0' : ''}"
       >
         <span class="font-medium block capitalize"
-          >{model.title} ({model.format})</span
+          >{model.title}</span
         >
-        <span class="text-xs text-gray-500">{model.size}/{model.max} </span>
+        <span class="text-xs text-gray-500">{model.size}/{model.max} {model.format}</span>
       </div>
       {#if activeRadialTooltip === index}
         <div
